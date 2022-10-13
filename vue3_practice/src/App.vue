@@ -1,4 +1,4 @@
-<template>
+<template> 
   <ul>
     <h1>DC Heroes</h1>
     <li v-for="(value, index) in dcHeros" :key="value.id">{{ index }}{{ value }} {{ key }}</li>
