@@ -5,16 +5,16 @@
       {{ index }} : {{ hero.name }}
     </li>
   </ul>
-  <input :value="newHero" />
-  <button :disabled="isDisabled">Add Hero</button>
+  <form @submit.prevent="dcHeros.push({name: newHero})">
+    <input v-model="newHero" />
+    <button type="submit">Add Hero</button>
+  </form>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      attribute: "value",
-      isDisabled: true,
       newHero: "Aquaman",
       dcHeros: [
         { name: "SuperGirl" },
