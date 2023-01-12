@@ -5,7 +5,7 @@
       {{ index }} : {{ hero.name }}
     </li>
   </ul>
-  <form @submit.prevent="dcHeros.push({name: newHero})">
+  <form @submit.prevent="addHero">
     <input v-model="newHero" />
     <button type="submit">Add Hero</button>
   </form>
@@ -13,6 +13,11 @@
 
 <script>
 export default {
+  methods: {
+    addHero(){
+      this.dcHeros.push({name: this.newHero}); this.newHero = '';
+    },
+  },
   data() {
     return {
       newHero: "Aquaman",
